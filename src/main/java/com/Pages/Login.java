@@ -75,7 +75,7 @@ public class Login {
 	
 	//Merchant
 	
-	public void clicklearneroption() {
+	public void clickmerchantoption() {
 		elementUtils.clickElement(merchantoption);
 	}
 	public void entermplfield(String Mobilenumber) {
@@ -116,5 +116,21 @@ public class Login {
 	}
 	public void clickauthorizebutton() {
 		elementUtils.clickElement(authorizebutton);
+	}
+	//learner
+	public void enterlearnermblno(String Mobilenumber ) {
+		 elementUtils.sendKeys(learnerMobilefield, Mobilenumber);
+	}
+	public void enterlearnerfullname(String Fullname) {
+		elementUtils.sendKeys( nameField, Fullname);
+	}
+	public void clickverificaionbutton() {
+		elementUtils. scrollAndClick(verificationbutton);
+	}
+	public void enterlearnerpasscode(String passcode) {
+		elementUtils.sendKeys( passwordfield, passcode);
+	}
+	public void clicklearningspacebutton() {
+		elementUtils.clickElement(learningspacebutton);
 	}
 }

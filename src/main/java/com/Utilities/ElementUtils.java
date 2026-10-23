@@ -115,15 +115,15 @@ public class ElementUtils {
 
 	}
 
-	// IS DISPLAYED
-	public boolean isDisplayed(WebElement element) {
+	// IS DISPLAYED-WEBELEMENT
+	public boolean isdisplayed(WebElement element) {
 		WebElement webelement = waitForVisibilityOfElement(element);
 		return webelement.isDisplayed();
 
 	}
-
+	// IS DISPLAYED-XPATH
 	public boolean isDisplayed(String xpath) {
-		return driver.findElements(By.xpath(xpath)).isEmpty();
+		return ! driver.findElements(By.xpath(xpath)).isEmpty();
 	}
 
 	// GET TITLE
@@ -155,32 +155,10 @@ public class ElementUtils {
 	// DROP DOWN (INDEX)
 	public void dropdownIndex(WebElement element, int index) {
 		 Select select = new Select(element);
-
-		 
-
-		    System.out.println("Dropdown options count: "
-
-		            + select.getOptions().size());
-
-		 
-
-		    for (WebElement option : select.getOptions()) {
-
-		        System.out.println(
-
-		            "Text: " + option.getText()
-
-		            + " | Value: " + option.getAttribute("value")
-
-		        );
-
-		    }
-
-		 
-
-		    select.selectByIndex(index);
-
-		}
+ System.out.println("Dropdown options count: "+ select.getOptions().size());
+for (WebElement option : select.getOptions()) {
+ System.out.println("Text: " + option.getText()+ " | Value: " + option.getAttribute("value"));
+}select.selectByIndex(index);}
 
 	
 
@@ -334,7 +312,7 @@ public class ElementUtils {
 	public void jsSVG(WebElement element) {
 		WebElement el = waitForVisibilityOfElement(element);
 		((JavascriptExecutor) driver)
-				.executeScript("argument[0].dispatchEvent(new MouseEvent('click',{bubblers:true}));", element);
+				.executeScript("argument[0].dispatchEvent(new MouseEvent('click',{bubblers:true}));",el);
 
 	}
 	// SCROLL TO ELEMENT

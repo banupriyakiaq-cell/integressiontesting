@@ -3,7 +3,7 @@
   <groupId>integrationtesting-corzaar</groupId>
   <artifactId>integrationtesting-corzaar</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-   <dependencies>
+  <dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -48,42 +48,15 @@
 			<version>6.3.4</version>
 			<scope>compile</scope>
 		</dependency>
-		<!-- Source:
-		https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
-		<dependency>
-			<groupId>io.qameta.allure</groupId>
-			<artifactId>allure-testng</artifactId>
-			<version>2.35.4</version>
-			<scope>compile</scope>
-		</dependency>
-
 
 		<!-- Source:
-		https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm -->
+		https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 		<dependency>
-			<groupId>io.qameta.allure</groupId>
-			<artifactId>allure-cucumber7-jvm</artifactId>
-			<version>2.35.4</version>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>7.34.6</version>
 			<scope>compile</scope>
 		</dependency>
 
 	</dependencies>
-	<build>
-	<plugins>
-	<plugin> 
-	<groupId>org.apache.maven.plugin
-	</groupId>
-	<artifactId>maven-surefire-plugin</artifactId>
-	<version>3.5.4</version>
-	 
-	</plugin>
-	 
-			<plugin>
-				<groupId>io.qameta.allure</groupId>
-				<artifactId>allure-maven</artifactId>
-				<version>3.16.0</version>
-			</plugin>
-		</plugins>
-	</build>
-
 </project>
