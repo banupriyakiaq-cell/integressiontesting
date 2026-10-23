@@ -111,15 +111,15 @@ public class CreateCouponstep {
 		ap = new Adminpage(DriverFactory.getDriver());
 		ap.clickcouponapprovemodule();
 		 ap.selectpendind();
-		// ap.clickapprovebutton();
-		//ap.clickgrjectoption();
+		 ap.clickapprovebutton();
+		ap.clickgrjectoption();
 	}
 
 	@When("admin search couponcode {string} and created coupon shold be displayed")
 	public void admin_search_couponcode_and_created_coupon_shold_be_displayed(String couponcode) {
 		ap.entersearchfield(couponcode);
 		mp = new merchantpage(DriverFactory.getDriver());
-		//Assert.assertTrue(mp.isCoupondispalyed(couponcode), "Created coupon is not displayed");
+		Assert.assertTrue(mp.isCoupondispalyed(couponcode), "Created coupon is not displayed");
 	}
 
 	@Then("click logout button")
@@ -150,10 +150,10 @@ public class CreateCouponstep {
 	public void and_click_offer_option_and_learner_should_be_see_the_approved_coupon() {
 		cc = new CouponCreation(DriverFactory.getDriver());
 		cc.clickofferoption();
-//		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(10));
-//		wait.until(ExpectedConditions.visibilityOf(cc.couponcod));
-//		String a = cc.couponcod.getText().trim();
-//		Assert.assertEquals(a, "ABPDSV1234");
+		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(cc.couponcod));
+		String a = cc.couponcod.getText().trim();
+		Assert.assertEquals(a, "ABPDSV1234");
  
 		boolean displayed=cc.iscoupondisplayed();
 		Assert.assertFalse(displayed,"Rejected coupon displayed in learner panel");
