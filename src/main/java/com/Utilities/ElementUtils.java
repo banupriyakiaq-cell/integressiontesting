@@ -408,7 +408,7 @@ for (WebElement option : select.getOptions()) {
 
 	public void childWindowByUrl(String value) {
 		for (String window : driver.getWindowHandles()) {
-			driver.switchTo().window(window);
+			driver.switchTo().window(window); 
 			if (driver.getCurrentUrl().contains(value)) {
 				break;
 			}

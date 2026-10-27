@@ -74,19 +74,21 @@ public class CreateCouponstep {
 
 	@Then("click submit button again click close button and closeicon")
 	public void click_submit_button_again_click_close_button_and_closeicon() {
-	     //cc.clicksubmitbutton();
+		// cc.clicksubmitbutton();
 		cc.clickcancelbutton();
 		String status = mp.getcouponstatus();
 		System.out.println("Coupon status in merchant panel:" + status);
 		Assert.assertEquals(status.trim().toLowerCase(), "rejected", "Coupon rejection status mismatch");
-		 
+
 	}
+
 	@Then("merchant click logout button")
 	public void merchant_click_logout_button() {
 		cc.clicklogoutbutton();
 		Assert.assertTrue(DriverFactory.getDriver().getCurrentUrl().contains("login"));
-		System.out.println(DriverFactory.getDriver().getCurrentUrl());  
+		System.out.println(DriverFactory.getDriver().getCurrentUrl());
 	}
+
 //Admin
 	@Given("admin is on home page  click  admin option and enter {string} and {string} click verification button")
 	public void admin_is_on_home_page_click_admin_option_and_enter_and_click_verification_button(String Emailid,
@@ -110,8 +112,8 @@ public class CreateCouponstep {
 	public void click_coupon_approval_module_select_pending_option_and_click_approve_button() {
 		ap = new Adminpage(DriverFactory.getDriver());
 		ap.clickcouponapprovemodule();
-		 ap.selectpendind();
-		 ap.clickapprovebutton();
+		ap.selectpendind();
+		ap.clickapprovebutton();
 		ap.clickgrjectoption();
 	}
 
@@ -154,10 +156,8 @@ public class CreateCouponstep {
 		wait.until(ExpectedConditions.visibilityOf(cc.couponcod));
 		String a = cc.couponcod.getText().trim();
 		Assert.assertEquals(a, "ABPDSV1234");
- 
-		boolean displayed=cc.iscoupondisplayed();
-		Assert.assertFalse(displayed,"Rejected coupon displayed in learner panel");
-
+		boolean displayed = cc.iscoupondisplayed();
+		Assert.assertFalse(displayed, "Rejected coupon displayed in learner panel");
 	}
 
 	@Then("click profile button and click logout option")
@@ -167,3 +167,4 @@ public class CreateCouponstep {
 	}
 
 }
+ 
